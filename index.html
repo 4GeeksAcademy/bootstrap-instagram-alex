@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi página con Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .image-container {
+      width: 100%; /* ocupa todo contenedor de la columna */
+      height: 0;
+      padding-top: 100%; 
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /*para no deformar la foto*/
+    }
+    .image-container-column {
+        border: 1px solid lightgrey;
+        border-radius: 5px;
+        margin-top: 10px;
+        width: 75%;
+    }
+    .image-container-column h2, p {
+        padding: 10px;
+    }
+    #columnContainer {
+        max-width: 800px;
+        display: flex;
+        justify-content: center;
+    }
+
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fa-brands fa-instagram me-2"></i>Instagram
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto d-flex flex-row align-items-center">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Create a new post</button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Caption:
+                                    <textarea class="form-control  mt-2" id="captionText" rows="3" placeholder="Add the caption of your post here"></textarea>
+                                    <div class="d-flex gap-2 mt-2">
+                                        <button type="button" class="btn btn-light border-secondary-subtle">
+                                            <i class="fa-solid fa-camera text-dark"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-light border-secondary-subtle">
+                                            <i class="fa-solid fa-location-dot text-dark"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success">Publish</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <li class="nav-item dropdown ms-2">
+                        <a class="nav-link dropdown-toggle bg-secondary text-light rounded px-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-gear"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  
+    <div class="container d-flex justify-content-center align-items-center mt-3 gap-3">
+        <i class="fa-solid fa-table-cells" id="tableIcon" style="cursor: pointer;"></i>
+        <i class="fa-solid fa-square" id="squareIcon" style="cursor: pointer;"></i>
+    </div>
+
+    <div id="gridContainer" class="container mt-3" style="display: none;">
+        <div class="row row-cols-3 g-2">
+            <div class="col">
+                <div class="image-container">
+                    <img src="https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-08Staffordshire20Bull20Terrier2.jpg?itok=PE2qNbMz" class="w-100" alt="image1">
+                </div>
+            </div>
+            <div class="col">
+                <div class="image-container">
+                    <img src="https://img.freepik.com/foto-gratis/amigos-abrazandose-playa-mirando-al-cielo_23-2149450770.jpg?semt=ais_hybrid&w=740" class="w-100" alt="image2">
+                </div>
+            </div>
+            <div class="col">
+                <div class="image-container">
+                    <img src="https://media.timeout.com/images/105909948/750/562/image.jpg" class="w-100" alt="image3">
+                </div>
+            </div>
+            <div class="col">
+                <div class="image-container">
+                    <img src="https://media.istockphoto.com/id/1399395748/es/foto/alegre-mujer-de-negocios-con-gafas-posando-con-las-manos-bajo-la-cara-mostrando-su-sonrisa-en.jpg?s=612x612&w=0&k=20&c=0y9KGEHKrwRUhZX2b7OH-SPUJ9t_HPf9Dle5khT77bg=" class="w-100" alt="image4">
+                </div>
+            </div>
+            <div class="col">
+                <div class="image-container">
+                    <img src="https://cdn.sortiraparis.com/images/80/83517/753564-visuel-paris-tour-eiffel-rue.jpg" class="w-100" alt="image5">
+                </div>
+            </div>
+            <div class="col">
+                <div class="image-container">
+                    <img src="https://i.ytimg.com/vi/mmGxbIaBC08/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAxMuoQjgsmMyHnf3ihRvunGE5Ofw" class="w-100" alt="image6">
+                </div>
+            </div>
+            <div class="col">
+                <div class="image-container">
+                    <img src="https://www.triptomax.com/wp-content/uploads/2018/05/shutterstock_193994486.jpg" class="w-100" alt="image7">
+                </div>
+            </div>
+            <div class="col">
+                <div class="image-container">
+                    <img src="https://i.blogs.es/5a9e4f/pankaj-patel-_sgrnwavnkw-unsplash/450_1000.jpeg" class="w-100" alt="image8">
+                </div>
+            </div>
+            <div class="col">
+                <div class="image-container">
+                    <img src="https://cdn-s-www.ledauphine.com/images/C36A01A4-475A-48D1-BFDF-71D1A4086094/NW_raw/a-la-rentree-2022-il-y-a-en-moyenne-22-eleves-dans-les-classes-du-niveau-preelementaire-photo-sipa-syspeo-1676477057.jpg" class="w-100" alt="image9">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="columnContainer" class="container mt-3" style="display: none;">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="image-container-column">
+                    <h2>My crazy dog spark!</h2>
+                    <img src="https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-08Staffordshire20Bull20Terrier2.jpg?itok=PE2qNbMz" class="w-100" alt="image1">
+                    <p class="likes">204 Likes</p>
+                    <p>This is an example of a very good photo that you can post on instagram</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="image-container-column">
+                    <h2>Friends</h2>
+                    <img src="https://img.freepik.com/foto-gratis/amigos-abrazandose-playa-mirando-al-cielo_23-2149450770.jpg?semt=ais_hybrid&w=740" class="w-100" alt="image2">
+                    <p class="likes">204 Likes</p>
+                    <p>This is an example of a very good photo that you can post on instagram</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="image-container-column">
+                    <h2>The beach</h2>
+                    <img src="https://media.timeout.com/images/105909948/750/562/image.jpg" class="w-100" alt="image3">
+                    <p class="likes">204 Likes</p>
+                    <p>This is an example of a very good photo that you can post on instagram</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="image-container-column">
+                    <h2>Smile</h2>
+                    <img src="https://media.istockphoto.com/id/1399395748/es/foto/alegre-mujer-de-negocios-con-gafas-posando-con-las-manos-bajo-la-cara-mostrando-su-sonrisa-en.jpg?s=612x612&w=0&k=20&c=0y9KGEHKrwRUhZX2b7OH-SPUJ9t_HPf9Dle5khT77bg=" class="w-100" alt="image4">
+                    <p class="likes">204 Likes</p>
+                    <p>This is an example of a very good photo that you can post on instagram</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="image-container-column">
+                    <h2>Paris</h2>
+                    <img src="https://cdn.sortiraparis.com/images/80/83517/753564-visuel-paris-tour-eiffel-rue.jpg" class="w-100" alt="image5">
+                    <p class="likes">204 Likes</p>
+                    <p>This is an example of a very good photo that you can post on instagram</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="image-container-column">
+                    <h2>The GOAT</h2>
+                    <img src="https://i.ytimg.com/vi/mmGxbIaBC08/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAxMuoQjgsmMyHnf3ihRvunGE5Ofw" class="w-100" alt="image6">
+                    <p class="likes">204 Likes</p>
+                    <p>This is an example of a very good photo that you can post on instagram</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="image-container-column">
+                    <h2>Family</h2>
+                    <img src="https://www.triptomax.com/wp-content/uploads/2018/05/shutterstock_193994486.jpg" class="w-100" alt="image7">
+                    <p class="likes">204 Likes</p>
+                    <p>This is an example of a very good photo that you can post on instagram</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="image-container-column">
+                    <h2>Programming</h2>
+                    <img src="https://i.blogs.es/5a9e4f/pankaj-patel-_sgrnwavnkw-unsplash/450_1000.jpeg" class="w-100" alt="image8">
+                    <p class="likes">204 Likes</p>
+                    <p>This is an example of a very good photo that you can post on instagram</p>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="image-container-column">
+                    <h2>Teacher in class</h2>
+                    <img src="https://cdn-s-www.ledauphine.com/images/C36A01A4-475A-48D1-BFDF-71D1A4086094/NW_raw/a-la-rentree-2022-il-y-a-en-moyenne-22-eleves-dans-les-classes-du-niveau-preelementaire-photo-sipa-syspeo-1676477057.jpg" class="w-100" alt="image9">
+                    <p class="likes">204 Likes</p>
+                    <p>This is an example of a very good photo that you can post on instagram</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
